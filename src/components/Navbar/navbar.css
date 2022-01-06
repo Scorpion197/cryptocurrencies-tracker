@@ -1,0 +1,25 @@
+.menu {
+
+    background: #001529 !important;
+    margin-top: 15px !important;
+}
+
+.menu-item {
+
+    color: #fff !important;
+}
+
+.link {
+
+    color: #fff !important;
+}
+
+.menu-item:hover {
+
+    background: #1890ff !important;
+}
+
+.link:hover {
+
+    color: #fff !important;
+}

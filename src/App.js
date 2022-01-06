@@ -14,6 +14,8 @@ import News from './components/News/News';
 import Exchanges from './components/Exchanges/Exchanges';
 import Cryptos from './components/Cryptos/Cryptos';
 
+import { Layout, Typography, Space } from 'antd';
+
 function App() {
   return (
     <div className="App">
@@ -21,7 +23,9 @@ function App() {
         <Switch>
 
           <Route exact path="/">
-            <HomePage />
+            <Layout>
+              <HomePage />
+            </Layout>
           </Route>
 
           <Route path="/news">
@@ -35,7 +39,7 @@ function App() {
           <Route path="/cryptos">
             <Cryptos />
           </Route>
-          
+
         </Switch>
       </Router>
     </div>
