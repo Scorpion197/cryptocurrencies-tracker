@@ -4,7 +4,7 @@ import API from '../API';
 
 const initialState = {
 
-    coins: [], 
+    stats: {}, 
 }
 
 export const useCoinsFetch = () => {
@@ -21,11 +21,11 @@ export const useCoinsFetch = () => {
             setError(false);
 
             const data = await API.fetchCoins(); 
-
+            console.log("data", data);
             setState(prev => ({
 
                 ...data, 
-                products: [...data]
+                stats : data.data.stats
             }));
 
         }catch(error) {

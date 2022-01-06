@@ -5,7 +5,7 @@ const API = {
     fetchCoins: async () => {
 
         const endpoint = 'https://coinranking1.p.rapidapi.com/coins';
-        options = {
+        const options = {
 
             method: 'GET',
             params: {
@@ -31,6 +31,8 @@ const API = {
 
         return response;
     }, 
-    
+
 
 }
+
+export default API;
