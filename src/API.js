@@ -32,7 +32,7 @@ const API = {
         return response;
     }, 
 
-    fetchCurrencies: async () => {
+    fetchCurrencies: async (limit) => {
 
 
       const endpoint = 'https://coinranking1.p.rapidapi.com/coins';
@@ -49,7 +49,7 @@ const API = {
               orderBy: 'marketCap',
               search: 'Bitco',
               orderDirection: 'desc',
-              limit: '50',
+              limit: limit,
               offset: '0'
             },
             headers: {

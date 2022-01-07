@@ -10,18 +10,26 @@ import { useCurrenciesFetch } from '../../Hooks/useCurrenciesFetch';
 //css 
 import './cryptos.css'; 
 
-const Cryptos = () => {
+const Cryptos = ({ simplified }) => {
 
-    const {curLoading, curError, curState} = useCurrenciesFetch();
+    const count = simplified ? 10 : 50;
+    const {curLoading, curError, curState} = useCurrenciesFetch(count);
+    var topCurrencies = [];
 
-    const currencies = curState; 
+    if (curState.length != 0 && simplified) 
 
+        topCurrencies = curState.slice(0, 10);
+
+    else 
+        topCurrencies = curState;
+
+        
     return (
         
         <div>
-            <Row gutters={[32, 32]} className="crypto-card-container">
+            <Row gutter={[32, 32]} className="crypto-card-container">
 
-                {currencies.map((currency) => (
+                {topCurrencies.map((currency) => (
 
                     <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.id}>
                         <Link to={`/crypto/${currency.id}`}>

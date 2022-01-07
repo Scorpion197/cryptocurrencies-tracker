@@ -20,7 +20,7 @@ const HomePage = () => {
 
     const {loading, error, state} = useCoinsFetch(); 
     const data = state.stats;
-    
+
     return (
 
         <div className="main-container">
@@ -49,7 +49,7 @@ const HomePage = () => {
                         <Title level={3} className="show-more"><Link className="show-more-link" to="/cryptos">Show more</Link></Title>
                     </div>
 
-                    <Cryptos />
+                    <Cryptos simplified={true} />
 
                     <div className="home-heading-container">
                         <Title level={2} className="home-title"> Top 10 Cryptos In The World</Title>

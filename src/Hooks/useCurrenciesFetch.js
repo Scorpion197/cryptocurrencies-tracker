@@ -5,7 +5,7 @@ import API from '../API';
 const initialState = [];
 
 
-export const useCurrenciesFetch = () => {
+export const useCurrenciesFetch = (limit) => {
 
     const [curLoading, setLoading] = useState(false);
     const [curError, setError] = useState(false); 
@@ -18,7 +18,7 @@ export const useCurrenciesFetch = () => {
             setLoading(true); 
             setError(false);
 
-            const data = await API.fetchCurrencies(); 
+            const data = await API.fetchCurrencies(limit); 
 
             setState(data.data.coins);
 

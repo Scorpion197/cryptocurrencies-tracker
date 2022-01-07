@@ -37,7 +37,7 @@ function App() {
           </Route>
 
           <Route path="/cryptos">
-            <Cryptos />
+            <Cryptos simplified={false} />
           </Route>
 
         </Switch>
