@@ -11,6 +11,7 @@ import './home.css';
 
 //hooks 
 import { useCoinsFetch } from '../../Hooks/useCoinsFetch';
+import { useCurrenciesFetch } from '../../Hooks/useCurrenciesFetch';
 
 const  { Title } = Typography; 
 
@@ -19,8 +20,6 @@ const HomePage = () => {
 
     const {loading, error, state} = useCoinsFetch(); 
     const data = state.stats;
-
-    console.log(state);
     
     return (
 
@@ -50,7 +49,7 @@ const HomePage = () => {
                         <Title level={3} className="show-more"><Link className="show-more-link" to="/cryptos">Show more</Link></Title>
                     </div>
 
-                    <Cryptos />
+                    
 
                     <div className="home-heading-container">
                         <Title level={2} className="home-title"> Top 10 Cryptos In The World</Title>
