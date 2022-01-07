@@ -22,7 +22,7 @@ const HomePage = () => {
 
     const {loading, error, state} = useCoinsFetch(); 
 
-    if (loading)
+    if (loading || !state.stats.hasOwnProperty('total'))
         return <Loader />
 
     const data = state.stats;
@@ -41,12 +41,12 @@ const HomePage = () => {
 
                     <Row>
 
-                        <Col span={12}><Statistic className="stat-title" title="Total Cryptocurrencies" value={data['total']}/></Col>
+                        <Col span={12}><Statistic className="stat-title" title="Total Cryptocurrencies" value={millify(data['total'])}/></Col>
                         <Col span={12}><Statistic className="stat-title" title="Total Exchanges" value={data.totalExchanges}/></Col>
-                        <Col span={12}><Statistic className="stat-title" title="Total Coins" value={data['totalCoins']}/></Col> 
-                        <Col span={12}><Statistic className="stat-title" title="Total Market Cap" value={data.totalMarketCap}/></Col>
-                        <Col span={12}><Statistic className="stat-title" title="Total 24h volume" value={data.total24hVolume}/></Col>
-                        <Col span={12}><Statistic className="stat-title" title="Total Markets" value={data['totalMarkets']}/></Col>
+                        <Col span={12}><Statistic className="stat-title" title="Total Coins" value={millify(data['totalCoins'])}/></Col> 
+                        <Col span={12}><Statistic className="stat-title" title="Total Market Cap" value={`$ ${millify(data.totalMarketCap)}`}/></Col>
+                        <Col span={12}><Statistic className="stat-title" title="Total 24h volume" value={`$ ${millify(data.total24hVolume)}`}/></Col>
+                        <Col span={12}><Statistic className="stat-title" title="Total Markets" value={millify(data['totalMarkets'])}/></Col>
 
                     </Row>
 
