@@ -63,6 +63,26 @@ const API = {
 
     },
 
+    fetchNews: async () => {
+
+      const endpoint = 'https://bing-news-search1.p.rapidapi.com/news/trendingtopics';
+      const options = {
+
+        method: 'GET',
+        params: {safeSearch: 'Off', textFormat: 'Raw'},
+        headers: {
+          'x-bingapis-sdk': 'true',
+          'x-rapidapi-host': 'bing-news-search1.p.rapidapi.com',
+          'x-rapidapi-key': '352849db3bmsh4ce2bb900555c17p1adedbjsnb5e62b206d13'
+        }
+
+      };
+
+      const response = await (await fetch(endpoint, options)).json(); 
+
+      return response;
+    }
+
 
 }
 

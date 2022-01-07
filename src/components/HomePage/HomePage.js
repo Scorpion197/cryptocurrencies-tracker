@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Cryptos from '../Cryptos/Cryptos';
 import News from '../News/News';
 import Navbar from '../Navbar/Navbar';
+import Loader from '../Loader/Loader';
+
 import './home.css';
 
 //hooks 
@@ -19,6 +21,10 @@ const  { Title } = Typography;
 const HomePage = () => {
 
     const {loading, error, state} = useCoinsFetch(); 
+
+    if (loading)
+        return <Loader />
+
     const data = state.stats;
 
     return (
@@ -52,7 +58,7 @@ const HomePage = () => {
                     <Cryptos simplified={true} />
 
                     <div className="home-heading-container">
-                        <Title level={2} className="home-title"> Top 10 Cryptos In The World</Title>
+                        <Title level={2} className="home-title"> Top 10 Trending News</Title>
                         <Title level={3} className="show-more"><Link className="show-more-link" to="/cryptos">Show more</Link></Title>
                     </div>
                     

@@ -31,7 +31,6 @@ export const useCoinsFetch = () => {
 
         }catch(error) {
 
-            console.log(error);
             setError(true);
         }
     

@@ -21,7 +21,8 @@ export const useCurrenciesFetch = (limit) => {
             const data = await API.fetchCurrencies(limit); 
 
             setState(data.data.coins);
-
+            setLoading(false);
+            
         } catch(error) {
 
             setError(true);

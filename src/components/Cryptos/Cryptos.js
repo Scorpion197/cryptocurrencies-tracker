@@ -10,6 +10,9 @@ import { useCurrenciesFetch } from '../../Hooks/useCurrenciesFetch';
 //css 
 import './cryptos.css'; 
 
+//components 
+import Loader from '../Loader/Loader';
+
 const Cryptos = ({ simplified }) => {
 
     const count = simplified ? 10 : 50;
@@ -23,7 +26,9 @@ const Cryptos = ({ simplified }) => {
     else 
         topCurrencies = curState;
 
-        
+    
+    if (curLoading) return <Loader />
+    
     return (
         
         <div>
