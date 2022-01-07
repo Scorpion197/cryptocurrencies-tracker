@@ -21,15 +21,18 @@ export const useCoinsFetch = () => {
             setError(false);
 
             const data = await API.fetchCoins(); 
-            console.log("data", data);
+
             setState(prev => ({
 
                 ...data, 
                 stats : data.data.stats
             }));
 
+            setLoading(false); 
+
         }catch(error) {
 
+            console.log(error);
             setError(true);
         }
     
