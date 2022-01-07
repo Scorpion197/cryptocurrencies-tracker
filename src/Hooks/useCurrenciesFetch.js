@@ -7,9 +7,9 @@ const initialState = [];
 
 export const useCurrenciesFetch = () => {
 
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false); 
-    const [state, setState] = useState(initialState);
+    const [curLoading, setLoading] = useState(false);
+    const [curError, setError] = useState(false); 
+    const [curState, setState] = useState(initialState);
 
     const getData = async () => {
 
@@ -33,5 +33,5 @@ export const useCurrenciesFetch = () => {
         getData();
     }, []);
 
-    return {loading, error, state};
+    return {curLoading, curError, curState};
 }

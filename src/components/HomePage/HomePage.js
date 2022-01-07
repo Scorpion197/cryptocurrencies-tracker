@@ -38,8 +38,8 @@ const HomePage = () => {
                         <Col span={12}><Statistic className="stat-title" title="Total Cryptocurrencies" value={data['total']}/></Col>
                         <Col span={12}><Statistic className="stat-title" title="Total Exchanges" value={data.totalExchanges}/></Col>
                         <Col span={12}><Statistic className="stat-title" title="Total Coins" value={data['totalCoins']}/></Col> 
-                        <Col span={12}><Statistic className="stat-title" title="Total Market Cap" value={data['totalMarketCap']}/></Col>
-                        <Col span={12}><Statistic className="stat-title" title="Total 24h volume" value={data['total24hVolume']}/></Col>
+                        <Col span={12}><Statistic className="stat-title" title="Total Market Cap" value={data.totalMarketCap}/></Col>
+                        <Col span={12}><Statistic className="stat-title" title="Total 24h volume" value={data.total24hVolume}/></Col>
                         <Col span={12}><Statistic className="stat-title" title="Total Markets" value={data['totalMarkets']}/></Col>
 
                     </Row>
@@ -49,7 +49,7 @@ const HomePage = () => {
                         <Title level={3} className="show-more"><Link className="show-more-link" to="/cryptos">Show more</Link></Title>
                     </div>
 
-                    
+                    <Cryptos />
 
                     <div className="home-heading-container">
                         <Title level={2} className="home-title"> Top 10 Cryptos In The World</Title>

@@ -21,7 +21,6 @@ export const useCoinsFetch = () => {
             setError(false);
 
             const data = await API.fetchCoins(); 
-
             setState(prev => ({
 
                 ...data, 
@@ -43,5 +42,6 @@ export const useCoinsFetch = () => {
         getData();
     }, []);
 
+    
     return {loading, error, state};
 }

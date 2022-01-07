@@ -6,21 +6,22 @@ import { Card, Row, Col, Input} from 'antd';
 
 //hooks 
 import { useCoinsFetch } from '../../Hooks/useCoinsFetch';
-
+import { useCurrenciesFetch } from '../../Hooks/useCurrenciesFetch';
 //css 
 import './cryptos.css'; 
 
 const Cryptos = () => {
 
-    const {loading, error, state} = useCoinsFetch(); 
-    const data = state.data; 
-    console.log("state: ", state);
+    const {curLoading, curError, curState} = useCurrenciesFetch();
+
+    const currencies = curState; 
+
     return (
         
         <div>
             <Row gutters={[32, 32]} className="crypto-card-container">
 
-                {state.data.coins.map((currency) => (
+                {currencies.map((currency) => (
 
                     <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.id}>
                         <Link to={`/crypto/${currency.id}`}>
