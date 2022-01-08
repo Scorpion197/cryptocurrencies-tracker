@@ -31,21 +31,22 @@ const News = ({simplified}) => {
         
        <div>
            
-           <Row gutter={[32, 16]}>
+           <Row gutter={[]}>
                {allNews.map((news, i) => (
+                   <Col xs={32} sm={24} lg={8} key={i}>
+                    <Card 
+                         key ={i}
+                         hoverable 
+                         style={{height: 300 }, {width:400}}
+                         cover={<img style={{width: 400}, {height: 300}} alt="news" src={news?.image?.thumbnail?.contentUrl || demoImage }/>}
+                     >
+                         <Meta title={news.name} description={
 
-                   <Card 
-                        key ={i}
-                        hoverable 
-                        style={{width: 300 }}
-                        cover={<img alt="news" src={news?.image?.thumbnail?.contentUrl || demoImage }/>}
-                    >
-                        <Meta title={news.name} description={
+                             news.description > 50 ? `${news.description.substring(0, 50)}...` : news.description
 
-                            news.description > 50 ? `${news.description.substring(0, 50)}...` : news.description
-
-                        } />
-                    </Card>
+                         } />
+                     </Card>
+                    </Col>
                ))
 
                }

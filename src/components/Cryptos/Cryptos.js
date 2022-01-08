@@ -28,7 +28,7 @@ const Cryptos = ({ simplified }) => {
 
     
     if (curLoading) return <Loader />
-
+    
     return (
         
         <div>
