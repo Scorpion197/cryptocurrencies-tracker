@@ -13,7 +13,7 @@ import HomePage from './components/HomePage/HomePage';
 import News from './components/News/News';
 import Exchanges from './components/Exchanges/Exchanges';
 import Cryptos from './components/Cryptos/Cryptos';
-
+import CryptoDetails from './components/CryptoDetails/CryptoDetails';
 import { Layout, Typography, Space } from 'antd';
 
 function App() {
@@ -40,6 +40,9 @@ function App() {
             <Cryptos simplified={false} />
           </Route>
 
+          <Route path="/cryptos/:coinId">
+            <CryptoDetails />
+          </Route>
         </Switch>
       </Router>
     </div>
