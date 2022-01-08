@@ -30,13 +30,14 @@ const News = ({simplified}) => {
     return (
         
        <div>
-           <Row gutter={[16, 16]}>
+           
+           <Row gutter={[32, 16]}>
                {allNews.map((news, i) => (
 
                    <Card 
                         key ={i}
                         hoverable 
-                        style={{width: 240 }}
+                        style={{width: 300 }}
                         cover={<img alt="news" src={news?.image?.thumbnail?.contentUrl || demoImage }/>}
                     >
                         <Meta title={news.name} description={
