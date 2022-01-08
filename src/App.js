@@ -29,7 +29,7 @@ function App() {
           </Route>
 
           <Route path="/news">
-            <News />
+            <News simplified={false}/>
           </Route>
 
           <Route path="/exchanges">

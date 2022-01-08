@@ -7,25 +7,49 @@ import Loader from '../Loader/Loader';
 
 import './news.css';
 
-const News = () => {
+const { Text, Title } = Typography;
+const { Meta } = Card;
+
+const News = ({simplified}) => {
 
     const { newsError, newsLoading, newsState} = useNewsFetch(); 
 
     if (newsLoading || newsState.length == 0)
         return <Loader />
 
-    else {
+    
 
-        const data = newsState; 
-    }
-
-    console.log(newsState);
+    let allNews = [];
+    const demoImage = 'https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
+    if (simplified)
+        allNews = newsState.slice(0, 8); 
+    
+    else 
+        allNews = newsState;
 
     return (
         
-        <div>
-            news
-        </div>
+       <div>
+           <Row gutter={[16, 16]}>
+               {allNews.map((news, i) => (
+
+                   <Card 
+                        key ={i}
+                        hoverable 
+                        style={{width: 240 }}
+                        cover={<img alt="news" src={news?.image?.thumbnail?.contentUrl || demoImage }/>}
+                    >
+                        <Meta title={news.name} description={
+
+                            news.description > 50 ? `${news.description.substring(0, 50)}...` : news.description
+
+                        } />
+                    </Card>
+               ))
+
+               }
+           </Row>
+       </div>
     )
 }
 

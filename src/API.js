@@ -65,11 +65,11 @@ const API = {
 
     fetchNews: async () => {
 
-      const endpoint = 'https://bing-news-search1.p.rapidapi.com/news/trendingtopics';
+      const endpoint = 'https://bing-news-search1.p.rapidapi.com/news';
       const options = {
 
         method: 'GET',
-        params: {safeSearch: 'Off', textFormat: 'Raw'},
+        params: {textFormat: 'Raw', safeSearch: 'Off'},
         headers: {
           'x-bingapis-sdk': 'true',
           'x-rapidapi-host': 'bing-news-search1.p.rapidapi.com',

@@ -61,7 +61,6 @@ const HomePage = () => {
                         <Title level={2} className="home-title"> Top 10 Trending News</Title>
                         <Title level={3} className="show-more"><Link className="show-more-link" to="/cryptos">Show more</Link></Title>
                     </div>
-                    
                 </div>
             </div>
         </div>
