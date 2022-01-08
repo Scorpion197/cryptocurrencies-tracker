@@ -81,7 +81,25 @@ const API = {
       const response = await (await fetch(endpoint, options)).json(); 
 
       return response;
-    }
+    }, 
+
+    fetchCryptoDetails: async (uuid) => {
+
+      const endpoint = `https://coinranking1.p.rapidapi.com/coin/${uuid}`; 
+      const options = {
+
+        method: 'GET',
+        params: {timePeriod: '24h'},
+        headers: {
+          'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
+          'x-rapidapi-key': '352849db3bmsh4ce2bb900555c17p1adedbjsnb5e62b206d13'
+        }
+      }; 
+
+      const response = await (await fetch(endpoint, options)).json(); 
+
+      return response;
+    },
 
 
 }

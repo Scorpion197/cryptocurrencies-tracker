@@ -40,9 +40,10 @@ function App() {
             <Cryptos simplified={false} />
           </Route>
 
-          <Route path="/cryptos/:coinId">
+          <Route path="/crypto/:coinId">
             <CryptoDetails />
           </Route>
+
         </Switch>
       </Router>
     </div>
