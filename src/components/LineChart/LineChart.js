@@ -61,7 +61,7 @@ const LineChart = ({coinHistory, currentPrice, coinName}) => {
 
         <div className="main-container">
             <Row className="chart-header">
-                <Title level={2} className="chart-title">{coinName} PriceChart</Title>
+                <Title level={2} className="chart-title">{coinName} Price Chart</Title>
                 <Col className="price-container">
                     <Title level={5} className="current-price">Current {coinName} Price: $ {currentPrice}</Title>
 
@@ -71,7 +71,8 @@ const LineChart = ({coinHistory, currentPrice, coinName}) => {
                 datasetIdKey='id'
                 data={data}
                 options={options}
-            />
+                className="line"
+            />  
         </div>
 
     )

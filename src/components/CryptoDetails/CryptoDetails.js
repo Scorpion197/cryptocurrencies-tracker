@@ -51,7 +51,7 @@ const CryptoDetails = () => {
     
     return (
         <>  
-            <Navbar className="navbar" />
+            <Navbar />
             <div className="coin-detail-container">
 
                 <div className="coin-heading-container">
@@ -69,13 +69,14 @@ const CryptoDetails = () => {
                     
                     {time.map((date) => <Option key={date}>{date} </Option>)}
                 </Select>
-                <LineChart 
-                
-                        coinHistory={coinHistory} 
-                        currentPrice={millify(coinData.price)}
-                        coinName={coinData.name}
-                />
-                
+                <div className="line-chart">
+                    <LineChart 
+
+                            coinHistory={coinHistory} 
+                            currentPrice={millify(coinData.price)}
+                            coinName={coinData.name}
+                    />
+                </div>
                 
                 <Col className="stats-container">
                     <Col className='coin-value-statistics'>

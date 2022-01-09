@@ -22,3 +22,10 @@
 
     margin-top: -2px !important;
 }
+
+.line-chart {
+
+    max-width: 100% !important;
+    width: 60% !important; 
+    margin: auto !important;
+}
