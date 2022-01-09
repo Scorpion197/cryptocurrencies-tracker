@@ -8,6 +8,8 @@ import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCi
 import { useCryptoDetailsFetch } from '../../Hooks/useCryptoDetailsFetch';
 import Loader from '../Loader/Loader'; 
 import Navbar from '../Navbar/Navbar';
+import LineChart from '../LineChart/LineChart';
+
 import './details.css'; 
 
 const {Title, Text} = Typography; 
@@ -63,6 +65,13 @@ const CryptoDetails = () => {
                     
                     {time.map((date) => <Option key={date}>{date} </Option>)}
                 </Select>
+                <LineChart 
+                
+                        coinHistory={coinHistory} 
+                        currentPrice={millify(coinData.price)}
+                        coinName={coinData.name}
+                />
+
                 <Col className="stats-container">
                     <Col className='coin-value-statistics'>
                         <Col className='coin-value-statistics-heading'>
