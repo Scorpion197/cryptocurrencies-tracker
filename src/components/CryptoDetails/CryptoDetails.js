@@ -6,6 +6,8 @@ import {Col, Row, Typography, Select } from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 
 import { useCryptoDetailsFetch } from '../../Hooks/useCryptoDetailsFetch';
+import { useHistoryCoinFetch } from '../../Hooks/useHistoryCoinFetch';
+
 import Loader from '../Loader/Loader'; 
 import Navbar from '../Navbar/Navbar';
 import LineChart from '../LineChart/LineChart';
@@ -21,7 +23,8 @@ const CryptoDetails = () => {
     const {loading, error, state} = useCryptoDetailsFetch(coinId); 
     const coinData = state; 
     const [timePeriod, setTimePeriod] = useState('7d');
-
+    const {hisLoading, hisError, hisState} = useHistoryCoinFetch(coinId, timePeriod);
+    
     if (loading || !coinData.hasOwnProperty("uuid"))
 
         return <Loader />
