@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.select-timeperiod {
+
+    margin-left: 43% !important;
+}
+
+
+.stats-container {
+
+    display: flex !important; 
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+}
