@@ -18,9 +18,9 @@ export const useHistoryCoinFetch = (uuid, timePeriod) => {
             setError(false); 
 
             const data = await API.fetchCoinHistory(uuid, timePeriod);
-
             setLoading(false); 
-            setState(data.history);
+            setState(data.data.history);
+
         }catch(error) {
 
             setError(true);

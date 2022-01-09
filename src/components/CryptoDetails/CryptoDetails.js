@@ -24,13 +24,14 @@ const CryptoDetails = () => {
     const coinData = state; 
     const [timePeriod, setTimePeriod] = useState('7d');
     const {hisLoading, hisError, hisState} = useHistoryCoinFetch(coinId, timePeriod);
-    
-    if (loading || !coinData.hasOwnProperty("uuid"))
+    const coinHistory = hisState; 
+
+    if (loading || !coinData.hasOwnProperty("uuid") || coinHistory.length <= 0)
 
         return <Loader />
 
     const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
-
+    
     const stats = [
       { title: 'Price to USD', value: `$ ${coinData?.price && millify(coinData?.price)}`, icon: <DollarCircleOutlined /> },
       { title: 'Rank', value: coinData?.rank, icon: <NumberOutlined /> },
@@ -74,7 +75,8 @@ const CryptoDetails = () => {
                         currentPrice={millify(coinData.price)}
                         coinName={coinData.name}
                 />
-
+                
+                
                 <Col className="stats-container">
                     <Col className='coin-value-statistics'>
                         <Col className='coin-value-statistics-heading'>

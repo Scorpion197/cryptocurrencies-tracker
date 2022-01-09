@@ -17,3 +17,8 @@
     justify-content: space-evenly !important;
     align-items: center !important;
 }
+
+.coin-detail-container {
+
+    margin-top: -2px !important;
+}
