@@ -3,11 +3,12 @@ version: '3'
 services:
   frontend:
 
-    container_name: frontend_app 
+    container_name: frontend-app 
     restart: always 
-    dockerfile: ./Dockerfile
     build:
       context: . 
+      dockerfile: Dockerfile
+
     ports: 
       - "3000:3000"
     command: npm start 

@@ -1,10 +1,10 @@
-FROM NODE:17
+FROM node:17
 
-WORKDIR /app/frontend 
+WORKDIR /home/app/crypto
 
-COPY package.json package-lock.json ./ 
+COPY package.json package-lock.json . 
 
-COPY . ./ 
+COPY . . 
 
 RUN npm install 
 
